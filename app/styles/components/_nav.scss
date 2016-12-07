@@ -1,20 +1,19 @@
-.top-bar {
-  background-color: $nav-bg-color;
-}
-
+.top-bar,
 .top-bar ul {
-  background-color: $nav-bg-color;
+    background-color: $nav-bg-color;
 }
 
-.menu > .menu-text > a {
-  display: inline;
-  padding: 0;
-}
+.top-bar {
+    .menu-text {
+        color: $nav-text-color;
+    }
 
-.menu-text {
-  color: $nav-text-color;
-}
+    .active-link {
+        font-weight: bold;
+    }
 
-.active-link {
-  font-weight: bold;
+    .menu > .menu-text > a {
+        display: inline;
+        padding: 0;
+    }
 }
