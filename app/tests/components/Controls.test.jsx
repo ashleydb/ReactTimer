@@ -20,6 +20,7 @@ describe('Controls', () => {
       var $pauseButton = $el.find('button:contains(Pause)');
       expect($pauseButton.length).toBe(1);
     });
+    
     it('should render Start when paused', () => {
       var controls = TestUtils.renderIntoDocument(<Controls countdownStatus={'PAUSED'}/>);
       //Get the controls as a jQuery element
