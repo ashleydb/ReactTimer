@@ -22,10 +22,14 @@ var Countdown = React.createClass({
           })
         case 'PAUSED':
           clearInterval(this.timer);
-              this.timer = undefined;
+          this.timer = undefined;
           break;
       }
     }
+  },
+  componentWillUnmount: function() {
+    clearInterval(this.timer);
+    this.timer = undefined;
   },
   startTimer: function() {
     //Every 1 second, edit the count
