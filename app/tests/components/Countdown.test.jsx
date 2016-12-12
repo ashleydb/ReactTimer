@@ -35,5 +35,27 @@ describe('Countdown', () => {
         done();
       }, 3001);
     });
+
+    it('should pause countdown on PAUSED status', (done) => {
+      var countdown = TestUtils.renderIntoDocument(<Countdown/>);
+      countdown.handleSetCountdown(3);
+      countdown.handleStatusChange('PAUSED');
+      setTimeout(() => {
+        expect(countdown.state.count).toBe(3);
+        expect(countdown.state.countdownStatus).toBe('PAUSED');
+        done();
+      }, 1001);
+    });
+
+    it('should stop countdown on STOPPED status', (done) => {
+      var countdown = TestUtils.renderIntoDocument(<Countdown/>);
+      countdown.handleSetCountdown(3);
+      countdown.handleStatusChange('STOPPED');
+      setTimeout(() => {
+        expect(countdown.state.count).toBe(0);
+        expect(countdown.state.countdownStatus).toBe('STOPPED');
+        done();
+      }, 1001);
+    });
   });
 });
