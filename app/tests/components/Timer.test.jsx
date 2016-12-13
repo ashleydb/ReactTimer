@@ -16,21 +16,22 @@ describe('Timer', () => {
       var timer = TestUtils.renderIntoDocument(<Timer/>);
 
       timer.handleStatusChange('STARTED');
-
-      expect(timer.state.timerStatus).toBe('STARTED');
       expect(timer.state.count).toBe(0);
+
       setTimeout(() => {
         expect(timer.state.count).toBe(1);
+        expect(timer.state.timerStatus).toBe('STARTED');
         done();
       }, 1001);
     });
 
     it('should pause timer on PAUSED status', (done) => {
       var timer = TestUtils.renderIntoDocument(<Timer/>);
+      timer.setState({count: 10});
       timer.handleStatusChange('STARTED');
+      timer.handleStatusChange('PAUSED');
       setTimeout(() => {
-        timer.handleStatusChange('PAUSED');
-        expect(timer.state.count).toBe(1);
+        expect(timer.state.count).toBe(10);
         expect(timer.state.timerStatus).toBe('PAUSED');
         done();
       }, 1001);

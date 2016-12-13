@@ -11,8 +11,6 @@ var Main = require('Main');
 var Countdown = require('Countdown');
 var Timer = require('Timer');
 
-//Load foundation for CSS. Need to chain loaders for css file, then apply to styles.
-require('style!css!foundation-sites/dist/css/foundation.min.css');
 //Use jQuery to start foundation
 $(document).foundation();
 
