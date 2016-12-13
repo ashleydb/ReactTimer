@@ -51,6 +51,10 @@ module.exports = {
         //loaders.test is a regex to see which files this loader should apply to.
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/
+      },
+      {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },

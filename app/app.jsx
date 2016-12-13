@@ -15,7 +15,7 @@ var Timer = require('Timer');
 $(document).foundation();
 
 //App css
-require('style!css!sass!applicationStyles');
+require('applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>
